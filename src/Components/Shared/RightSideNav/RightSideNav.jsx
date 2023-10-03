@@ -2,7 +2,7 @@ import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
 import qZone1 from "../../../assets/qZone1.png";
 import qZone2 from "../../../assets/qZone2.png";
 import qZone3 from "../../../assets/qZone2.png";
-import bgImage from "../../../assets/bg.png";
+
 const RightSideNav = () => {
   return (
     <div className="">
