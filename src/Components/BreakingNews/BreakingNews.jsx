@@ -6,7 +6,7 @@ const BreakingNews = () => {
     <div className="flex gap-2 bg-[#F3F3F3] justify-center items-center p-5">
       <div>
         <button
-          className="btn btn-secondary bg-[#D72050] rounded-none text-white
+          className="btn btn-secondary bg-[#D72050] rounded-none text-white px-8
         "
         >
           Latest

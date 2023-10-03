@@ -52,7 +52,7 @@ const Navbar = () => {
               <img src={userDefault} />
             </div>
           </label>
-          <button className="btn btn-square bg-[#403F3F] text-white px-16 rounded-none hover:text-black px-8">
+          <button className="btn btn-square bg-[#403F3F] text-white px-16 rounded-none hover:text-black">
             Login
           </button>
         </div>
