@@ -1,19 +1,52 @@
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaGoogle, FaInstagram, FaTwitter } from "react-icons/fa";
 import qZone1 from "../../../assets/qZone1.png";
 import qZone2 from "../../../assets/qZone2.png";
 import qZone3 from "../../../assets/qZone2.png";
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 const RightSideNav = () => {
+  const navigate = useNavigate();
+  const { googleSignIn, facebookSignIn } = useContext(AuthContext);
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(() => {
+        alert("Logged in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        alert("Logged in Failed!!");
+        console.log(error);
+      });
+  };
+  const handleFacebookSignIn = () => {
+    facebookSignIn()
+      .then(() => {
+        alert("Logged in successfully");
+        navigate("/");
+      })
+      .catch((error) => {
+        alert("Logged in Failed!!");
+        console.log(error);
+      });
+  };
   return (
     <div className="">
       <div className="pb-8">
         <h4 className="text-xl text-[#403F3F] font-medium mb-8">Login With</h4>
         <div>
-          <button className="w-full flex justify-center items-center bg-transparent text-black border border-black hover:text-[#446FD5] hover:border-[#446FD5] rounded-md py-2 gap-2 mb-3">
-            <FaFacebookF /> Login With Google
+          <button
+            onClick={handleGoogleSignIn}
+            className="w-full flex justify-center items-center bg-transparent text-black border border-black hover:text-[#446FD5] hover:border-[#446FD5] rounded-md py-2 gap-2 mb-3"
+          >
+            <FaGoogle /> Login With Google
           </button>
-          <button className="w-full flex justify-center items-center bg-transparent text-black border border-black rounded-md py-2 gap-2 hover:text-[#446FD5] hover:border-[#446FD5]">
-            <FaTwitter /> Login With Twitter
+          <button
+            onClick={handleFacebookSignIn}
+            className="w-full flex justify-center items-center bg-transparent text-black border border-black rounded-md py-2 gap-2 hover:text-[#446FD5] hover:border-[#446FD5]"
+          >
+            <FaFacebookF /> Login With Facebook
           </button>
         </div>
       </div>
