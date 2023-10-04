@@ -1,6 +1,21 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import userDefault from "../../../assets/user.png";
+import { FaSignOutAlt } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../../AuthProvider/AuthProvider";
+
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        alert("Sign-out successful.");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   const links = (
     <>
       <li>
@@ -12,11 +27,21 @@ const Navbar = () => {
       <li>
         <NavLink to="/career">Career</NavLink>
       </li>
+      {!user && (
+        <>
+          <li>
+            <NavLink to="/login">Login</NavLink>
+          </li>
+          <li>
+            <NavLink to="/register">Register</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
   return (
     <div>
-      <div className="navbar bg-base-100">
+      <div className="navbar">
         <div className="navbar-start">
           <div className="dropdown">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -46,15 +71,23 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
-        <div className="navbar-end gap-2">
+        <div className="navbar-end gap-4">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <img src={userDefault} />
             </div>
           </label>
-          <button className="btn btn-square bg-[#403F3F] text-white px-16 rounded-none hover:text-black">
-            Login
-          </button>
+          {user ? (
+            <button onClick={handleSignOut}>
+              <FaSignOutAlt className="text-4xl" />
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="btn btn-square bg-[#403F3F] text-white px-16 rounded-none hover:text-black">
+                Login
+              </button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
