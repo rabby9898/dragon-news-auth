@@ -26,11 +26,11 @@ const Register = () => {
       });
   };
   return (
-    <div className="bg-[#F3F3F3] py-16 px-32">
+    <div className="bg-[#F3F3F3] py-5 md:py-10 lg:py-16 px-5 md:px-10 lg:px-32">
       <Navbar></Navbar>
 
       <div className="flex justify-center items-center mx-aut py-20">
-        <div className="relative flex flex-col rounded-xl bg-clip-border text-gray-700 shadow-none bg-white p-[100px]">
+        <div className="relative flex flex-col rounded-xl bg-clip-border text-gray-700 shadow-none bg-white p-[20px] md:p-[40px] lg:p-[100px]">
           <h4 className="block font-sans text-2xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased capitalize">
             Register your account
           </h4>

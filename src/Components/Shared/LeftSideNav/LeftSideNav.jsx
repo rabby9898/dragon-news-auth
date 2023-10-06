@@ -16,14 +16,14 @@ const LeftSideNav = () => {
   }, []);
   return (
     <>
-      <div className="p-6">
+      <div className="p-3 lg:p-6">
         <h1 className="text-2xl text-[#353148] font-semibold mb-8">
           All Category
         </h1>
         <div className="">
           {category.map((item) => (
             <NavLink
-              className="w-full block px-8 py-4 text-xl text-[#9F9F9F] hover:bg-[#9F9F9F] hover hover:text-black hover:font-semibold hover:rounded-lg"
+              className="w-full block px-4 lg:px-8 py-4 text-xl text-[#9F9F9F] hover:bg-[#9F9F9F] hover hover:text-black hover:font-semibold hover:rounded-lg"
               key={item.id}
               to={`/category/${item.id}`}
             >
@@ -33,7 +33,7 @@ const LeftSideNav = () => {
         </div>
       </div>
 
-      <div className="p-6">
+      <div className="p-3 lg:p-6">
         <div className="card w-full bg-base-100">
           <img src={img1} alt="news" />
           <div className="w-full my-5">

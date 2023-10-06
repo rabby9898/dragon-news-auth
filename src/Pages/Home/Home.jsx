@@ -10,12 +10,12 @@ const Home = () => {
   const news = useLoaderData();
   return (
     <div className="font-poppins">
-      <div className="px-32">
+      <div className="px-5 md:px-10 lg:px-32">
         <Header></Header>
         <BreakingNews></BreakingNews>
         <Navbar></Navbar>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-4 py-20 gap-5  px-32">
+      <div className="grid grid-cols-1 md:grid-cols-4 py-5 md:py-20 gap-1  md:gap-2 lg:gap-5 md:px-6 lg:px-32">
         <div className="">
           <LeftSideNav></LeftSideNav>
         </div>

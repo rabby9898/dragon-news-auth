@@ -96,19 +96,20 @@ const RightSideNav = () => {
           className="hero h-[700px]"
           style={{
             backgroundImage: "url(https://i.ibb.co/fn7rZtz/bg.png",
+            width: "100%",
           }}
         >
           <div className="hero-overlay bg-opacity-60"></div>
           <div className="hero-content text-center text-neutral-content">
             <div className="max-w-md">
-              <h1 className="mb-5 text-5xl text-white font-bold">
+              <h1 className="mb-5 text-xl md:text-2xl lg:text-5xl text-white font-bold">
                 Create an Amazing Newspaper
               </h1>
-              <p className=" text-xl font-normal my-10">
+              <p className="text-base lg:text-xl font-normal my-10">
                 Discover thousands of options, easy to customize layouts,
                 one-click to import demo and much more.
               </p>
-              <button className=" btn btn-secondary bg-[#D72050] rounded-none text-white px-8">
+              <button className=" btn btn-secondary bg-[#D72050] rounded-none  text-white px-4 lg:px-8">
                 Learn More
               </button>
             </div>
